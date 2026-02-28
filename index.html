@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXO — Brand Direction Guide</title>
+<meta name="description" content="Exo visual identity guide — colors, typography, logo system, positioning, and social media standards.">
+<meta property="og:title" content="EXO — Brand Direction Guide">
+<meta property="og:description" content="Visual identity guide — colors, typography, logo system, positioning, and social media standards.">
+<meta property="og:image" content="https://dirty-digs.github.io/exo-brand/exo-og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dirty-digs.github.io/exo-brand/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0B1120;--surface:#111827;--accent:#0D9488;--accent2:#10B981;
+  --text:#F9FAFB;--muted:#6B7280;--border:rgba(255,255,255,0.08);
+  --lt-bg:#FAFBFC;--lt-surface:#FFFFFF;--lt-accent:#0D9488;--lt-accent2:#059669;
+  --lt-text:#111827;--lt-muted:#6B7280;--lt-border:rgba(17,24,39,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:-0.02em}
+.section{padding:80px 0;border-bottom:1px solid var(--border)}
+.container{max-width:1120px;margin:0 auto;padding:0 40px}
+.section-num{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:8px;display:block}
+.section-title{font-size:36px;margin-bottom:12px}
+.section-subtitle{font-size:16px;color:var(--muted);max-width:640px;margin-bottom:48px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--border);padding:32px}
+.label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px}
+.accent{color:var(--accent)}
+.tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;padding:4px 10px;border:1px solid var(--accent);color:var(--accent);margin:0 6px 6px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+table th{text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--border)}
+table td{padding:10px 16px;border-bottom:1px solid var(--border);vertical-align:middle}
+td code{font-family:'JetBrains Mono','SF Mono',monospace;font-size:12px;background:rgba(255,255,255,0.06);padding:2px 6px;border:1px solid var(--border)}
+
+/* Cover */
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:60%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.28) 0%,rgba(16,185,129,0.12) 30%,transparent 65%);pointer-events:none}
+.cover-logo{width:120px;height:120px;margin-bottom:40px;position:relative;z-index:1}
+.cover-logo svg{width:100%;height:100%}
+.cover-title{font-size:96px;font-weight:700;letter-spacing:0.04em;position:relative;z-index:1}
+.cover-sub{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.2em;color:var(--muted);margin-top:16px;position:relative;z-index:1}
+.cover-by{font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);position:absolute;bottom:48px;z-index:1}
+
+/* Color swatches */
+.swatch-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.swatch{width:80px;text-align:center}
+.swatch-color{width:80px;height:80px;border:1px solid var(--border);margin-bottom:8px}
+.swatch-hex{font-family:'JetBrains Mono','SF Mono',monospace;font-size:11px;color:var(--muted)}
+.swatch-name{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px}
+
+/* Logo display */
+.logo-display{display:flex;align-items:center;justify-content:center;padding:40px;min-height:160px}
+.logo-display svg{max-height:80px;width:auto}
+.logo-display--dark{background:var(--bg);border:1px solid var(--border)}
+.logo-display--light{background:#FAFBFC;border:1px solid var(--lt-border)}
+.logo-display--teal{background:var(--accent);border:1px solid var(--accent)}
+.logo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:32px}
+
+/* Social mockups */
+.social-mock{position:relative;overflow:hidden}
+.social-mock--twitter-banner{aspect-ratio:1500/500;background:var(--bg);border:1px solid var(--border);position:relative;overflow:hidden}
+.social-mock--twitter-banner::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:70%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.28) 0%,rgba(16,185,129,0.12) 30%,transparent 65%);pointer-events:none}
+.social-mock--linkedin-banner{aspect-ratio:1584/396;background:var(--bg);border:1px solid var(--border);position:relative;overflow:hidden}
+.social-mock--linkedin-banner::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:70%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.28) 0%,rgba(16,185,129,0.12) 30%,transparent 65%);pointer-events:none}
+.social-mock--avatar{width:80px;height:80px;border-radius:50%;background:var(--bg);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.social-mock--avatar svg{width:48px;height:48px}
+.social-dim{position:absolute;bottom:8px;right:12px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);z-index:2}
+
+/* Typography specimens */
+.type-specimen{margin-bottom:24px}
+.type-specimen h1{font-family:'Outfit',sans-serif;font-size:48px;font-weight:700;margin-bottom:4px}
+.type-specimen h2{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;margin-bottom:4px}
+.type-specimen p{font-family:'Inter',sans-serif;font-size:16px;margin-bottom:4px}
+.type-specimen .caption{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted)}
+.type-meta{font-size:12px;color:var(--muted);font-family:'JetBrains Mono','SF Mono',monospace}
+
+/* Light mode demo */
+.light-demo{background:var(--lt-bg);color:var(--lt-text);padding:48px;border:1px solid var(--lt-border)}
+.light-demo .card{background:var(--lt-surface);border:1px solid var(--lt-border);color:var(--lt-text)}
+.light-demo .accent{color:var(--lt-accent)}
+.light-demo .swatch-hex{color:var(--lt-muted)}
+.light-demo .swatch-name{color:var(--lt-text)}
+
+/* Quote block */
+.quote{border-left:3px solid var(--accent);padding:16px 24px;font-style:italic;color:var(--muted);margin:24px 0}
+
+/* Bullet list */
+.bullet-list{list-style:none;padding:0}
+.bullet-list li{position:relative;padding-left:20px;margin-bottom:10px;font-size:15px}
+.bullet-list li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--accent)}
+
+/* Side-by-side website mockup */
+.website-compare{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.website-mock{padding:0;min-height:400px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.website-mock .mock-nav{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--border)}
+.website-mock .mock-nav .nav-logo{font-family:'Outfit',sans-serif;font-weight:700;font-size:18px}
+.website-mock .mock-nav .nav-links{display:flex;gap:20px;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted)}
+.website-mock .mock-toggle{width:36px;height:20px;border-radius:10px;background:var(--accent);position:relative;cursor:pointer}
+.website-mock .mock-toggle::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
+.website-mock .mock-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;position:relative}
+.website-mock .mock-hero h2{font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;margin-bottom:12px}
+.website-mock .mock-hero p{font-size:14px;max-width:360px;margin-bottom:20px}
+.website-mock .mock-hero .mock-btn{display:inline-block;padding:10px 28px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+
+.mock-dark{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.mock-dark .mock-nav{border-color:var(--border)}
+.mock-dark .mock-hero::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160%;height:60%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.28) 0%,transparent 60%);pointer-events:none}
+.mock-dark .mock-btn{background:var(--accent);color:var(--bg)}
+
+.mock-light{background:var(--lt-bg);color:var(--lt-text);border:1px solid var(--lt-border)}
+.mock-light .mock-nav{border-color:var(--lt-border)}
+.mock-light .mock-nav .nav-links{color:var(--lt-muted)}
+.mock-light .mock-hero::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160%;height:60%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.18) 0%,transparent 60%);pointer-events:none}
+.mock-light .mock-hero p{color:var(--lt-muted)}
+.mock-light .mock-btn{background:var(--lt-accent);color:#fff}
+.mock-light .mock-toggle{background:var(--lt-accent)}
+.mock-light .mock-toggle::after{transform:translateX(16px)}
+
+/* Responsive */
+@media(max-width:768px){
+  .grid-2,.grid-3,.logo-grid,.website-compare{grid-template-columns:1fr}
+  .cover-title{font-size:56px}
+  .container{padding:0 20px}
+  .section{padding:48px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== 1. COVER ========== -->
+<section class="cover">
+  <div class="cover-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 749.999995" preserveAspectRatio="xMidYMid meet"><defs><clipPath id="cv1"><path d="M 375 0 C 167.894531 0 0 167.894531 0 375 C 0 582.105469 167.894531 750 375 750 C 582.105469 750 750 582.105469 750 375 C 750 167.894531 582.105469 0 375 0 Z M 375 0" clip-rule="nonzero"/></clipPath><clipPath id="cv2"><path d="M 375 125.511719 C 352.28125 125.511719 333.867188 143.929688 333.867188 166.648438 C 333.867188 189.367188 352.28125 207.78125 375 207.78125 C 397.71875 207.78125 416.132812 189.367188 416.132812 166.648438 C 416.132812 143.929688 397.71875 125.511719 375 125.511719 Z M 375 125.511719" clip-rule="nonzero"/></clipPath><clipPath id="cv3"><path d="M 375 542.140625 C 352.28125 542.140625 333.867188 560.558594 333.867188 583.277344 C 333.867188 605.992188 352.28125 624.410156 375 624.410156 C 397.71875 624.410156 416.132812 605.992188 416.132812 583.277344 C 416.132812 560.558594 397.71875 542.140625 375 542.140625 Z M 375 542.140625" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#cv1)"><path stroke-linecap="butt" transform="matrix(0.771529, 0, 0, 0.771529, 0, 0)" fill="none" stroke-linejoin="miter" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z M 486.048 0" stroke="#F9FAFB" stroke-width="97.21" stroke-opacity="1" stroke-miterlimit="4"/></g><path stroke-linecap="butt" transform="matrix(0.545553, 0.545553, -0.545553, 0.545553, 211.384, 184.108)" fill="none" stroke-linejoin="miter" d="M 0 25 L 649.814 25" stroke="#F9FAFB" stroke-width="50" stroke-opacity="1" stroke-miterlimit="4"/><path stroke-linecap="butt" transform="matrix(0.545553, -0.545553, 0.545553, 0.545553, 184.107, 541.581)" fill="none" stroke-linejoin="miter" d="M 0 25 L 655.249 25" stroke="#F9FAFB" stroke-width="50" stroke-opacity="1" stroke-miterlimit="4"/><g clip-path="url(#cv2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#F9FAFB"/></g><g clip-path="url(#cv3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#F9FAFB"/></g></svg>
+  </div>
+  <h1 class="cover-title">EXO</h1>
+  <p class="cover-sub">BRAND DIRECTION GUIDE &mdash; FEBRUARY 2026</p>
+  <p class="cover-by">PREPARED BY DIRT DIGITAL</p>
+</section>
+
+<!-- ========== 2. BRAND NAME ========== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num">02 / Brand Name</span>
+    <h2 class="section-title">Just <span class="accent">Exo</span>.</h2>
+    <p class="section-subtitle">Drop "Technologies." Own the name. One word. No copies.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="label">Recommendation</div>
+        <h3 style="font-size:24px;margin-bottom:16px">Use "Exo" everywhere</h3>
+        <ul class="bullet-list">
+          <li>Shorter = more memorable, more premium</li>
+          <li>"Technologies" is a generic suffix used by hundreds of companies — creates SEO noise</li>
+          <li>Already verified on Twitter (display name "Exo"), 33.7K followers recognize it</li>
+          <li>Single-word brands signal confidence: Stripe, Vercel, Linear, Figma</li>
+          <li>Usernames/domains stay as-is (@exo_tech_, exotechnologies.xyz) — zero friction</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label">Usage Rules</div>
+        <table>
+          <tr><th>Context</th><th>Name</th></tr>
+          <tr><td>Marketing, website, social</td><td><strong>Exo</strong></td></tr>
+          <tr><td>Legal documents, contracts</td><td>Exo Technologies</td></tr>
+          <tr><td>Casual / conversation</td><td>Exo</td></tr>
+          <tr><td>Domain / username</td><td>Keep existing (no change needed)</td></tr>
+        </table>
+        <div class="quote" style="margin-top:24px">
+          "Exo" — from Greek <em>exo-</em> (outside, beyond). Building outside the box.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. COLOR PALETTE ========== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num">03 / Color Palette</span>
+    <h2 class="section-title">Dark Aurora + Light Inverse</h2>
+    <p class="section-subtitle">Two modes derived from the live Twitter banner. The dark palette leads — the aurora glow is the signature.</p>
+
+    <div class="grid-2">
+      <!-- Dark Mode -->
+      <div class="card">
+        <div class="label">Dark Mode (Primary)</div>
+        <div class="swatch-row" style="margin-top:16px">
+          <div class="swatch"><div class="swatch-color" style="background:#0B1120"></div><div class="swatch-name">Background</div><div class="swatch-hex">#0B1120</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#111827"></div><div class="swatch-name">Surface</div><div class="swatch-hex">#111827</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#0D9488"></div><div class="swatch-name">Aurora Teal</div><div class="swatch-hex">#0D9488</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#10B981"></div><div class="swatch-name">Aurora Green</div><div class="swatch-hex">#10B981</div></div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch"><div class="swatch-color" style="background:#F9FAFB"></div><div class="swatch-name">Text</div><div class="swatch-hex">#F9FAFB</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#6B7280"></div><div class="swatch-name">Muted</div><div class="swatch-hex">#6B7280</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:rgba(255,255,255,0.08);border:1px dashed rgba(255,255,255,0.2)"></div><div class="swatch-name">Border</div><div class="swatch-hex">8% white</div></div>
+        </div>
+        <div class="label" style="margin-top:16px">Aurora Glow Effect</div>
+        <div style="height:80px;background:var(--bg);position:relative;border:1px solid var(--border);margin-top:8px;overflow:hidden">
+          <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:100%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.28) 0%,rgba(16,185,129,0.12) 30%,transparent 65%)"></div>
+        </div>
+        <div style="margin-top:8px"><code style="font-size:11px;background:rgba(255,255,255,0.06);padding:4px 8px;border:1px solid var(--border);font-family:'JetBrains Mono',monospace;color:var(--muted)">radial-gradient(ellipse at 50% 80%, rgba(13,148,136,0.25) 0%, transparent 60%)</code></div>
+      </div>
+
+      <!-- Light Mode -->
+      <div class="card light-demo">
+        <div class="label" style="color:var(--lt-muted)">Light Mode (Inverse)</div>
+        <div class="swatch-row" style="margin-top:16px">
+          <div class="swatch"><div class="swatch-color" style="background:#FAFBFC;border-color:var(--lt-border)"></div><div class="swatch-name">Background</div><div class="swatch-hex">#FAFBFC</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border-color:var(--lt-border)"></div><div class="swatch-name">Surface</div><div class="swatch-hex">#FFFFFF</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#0D9488;border-color:var(--lt-border)"></div><div class="swatch-name">Aurora Teal</div><div class="swatch-hex">#0D9488</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#059669;border-color:var(--lt-border)"></div><div class="swatch-name">Aurora Green</div><div class="swatch-hex">#059669</div></div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch"><div class="swatch-color" style="background:#111827;border-color:var(--lt-border)"></div><div class="swatch-name">Text</div><div class="swatch-hex">#111827</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:#6B7280;border-color:var(--lt-border)"></div><div class="swatch-name">Muted</div><div class="swatch-hex">#6B7280</div></div>
+          <div class="swatch"><div class="swatch-color" style="background:rgba(17,24,39,0.08);border:1px dashed rgba(17,24,39,0.2)"></div><div class="swatch-name">Border</div><div class="swatch-hex">8% dark</div></div>
+        </div>
+        <div class="label" style="margin-top:16px;color:var(--lt-muted)">Aurora Glow Effect</div>
+        <div style="height:80px;background:var(--lt-bg);position:relative;border:1px solid var(--lt-border);margin-top:8px;overflow:hidden">
+          <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:140%;height:100%;background:radial-gradient(ellipse at 50% 100%,rgba(13,148,136,0.18) 0%,transparent 60%)"></div>
+        </div>
+        <div style="margin-top:8px"><code style="font-size:11px;background:rgba(17,24,39,0.04);padding:4px 8px;border:1px solid var(--lt-border);font-family:'JetBrains Mono',monospace;color:var(--lt-muted)">radial-gradient(ellipse at 50% 80%, rgba(13,148,136,0.18) 0%, transparent 60%)</code></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. LOGO SYSTEM ========== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num">04 / Logo System</span>
+    <h2 class="section-title">Three Lockups</h2>
+    <p class="section-subtitle">Logomark (icon), Logotype (icon + wordmark), and Wordmark (text only). Each works across dark, light, and accent backgrounds.</p>
+
+    <!-- LOGOMARK -->
+    <div class="label" style="margin-bottom:12px">Logomark — Standalone Icon / Favicon / Avatar</div>
+    <div class="logo-grid">
+      <div class="logo-display logo-display--dark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" style="height:80px;width:auto"><defs><clipPath id="lm1"><path d="M 375 0 C 167.895 0 0 167.895 0 375 C 0 582.105 167.895 750 375 750 C 582.105 750 750 582.105 750 375 C 750 167.895 582.105 0 375 0 Z M 375 0" clip-rule="nonzero"/></clipPath><clipPath id="lm2"><path d="M 375 125.512 C 352.281 125.512 333.867 143.93 333.867 166.648 C 333.867 189.367 352.281 207.781 375 207.781 C 397.719 207.781 416.133 189.367 416.133 166.648 C 416.133 143.93 397.719 125.512 375 125.512 Z" clip-rule="nonzero"/></clipPath><clipPath id="lm3"><path d="M 375 542.141 C 352.281 542.141 333.867 560.559 333.867 583.277 C 333.867 605.992 352.281 624.41 375 624.41 C 397.719 624.41 416.133 605.992 416.133 583.277 C 416.133 560.559 397.719 542.141 375 542.141 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#lm1)"><path transform="matrix(0.7715, 0, 0, 0.7715, 0, 0)" fill="none" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z" stroke="#F9FAFB" stroke-width="97.21" stroke-miterlimit="4"/></g><path transform="matrix(0.5456, 0.5456, -0.5456, 0.5456, 211.384, 184.108)" fill="none" d="M 0 25 L 649.814 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.5456, -0.5456, 0.5456, 0.5456, 184.107, 541.581)" fill="none" d="M 0 25 L 655.249 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#lm2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#F9FAFB"/></g><g clip-path="url(#lm3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#F9FAFB"/></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Dark BG</span>
+      </div>
+      <div class="logo-display logo-display--light" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" style="height:80px;width:auto"><defs><clipPath id="lmb1"><path d="M 375 0 C 167.895 0 0 167.895 0 375 C 0 582.105 167.895 750 375 750 C 582.105 750 750 582.105 750 375 C 750 167.895 582.105 0 375 0 Z M 375 0" clip-rule="nonzero"/></clipPath><clipPath id="lmb2"><path d="M 375 125.512 C 352.281 125.512 333.867 143.93 333.867 166.648 C 333.867 189.367 352.281 207.781 375 207.781 C 397.719 207.781 416.133 189.367 416.133 166.648 C 416.133 143.93 397.719 125.512 375 125.512 Z" clip-rule="nonzero"/></clipPath><clipPath id="lmb3"><path d="M 375 542.141 C 352.281 542.141 333.867 560.559 333.867 583.277 C 333.867 605.992 352.281 624.41 375 624.41 C 397.719 624.41 416.133 605.992 416.133 583.277 C 416.133 560.559 397.719 542.141 375 542.141 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#lmb1)"><path transform="matrix(0.7715, 0, 0, 0.7715, 0, 0)" fill="none" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z" stroke="#111827" stroke-width="97.21" stroke-miterlimit="4"/></g><path transform="matrix(0.5456, 0.5456, -0.5456, 0.5456, 211.384, 184.108)" fill="none" d="M 0 25 L 649.814 25" stroke="#111827" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.5456, -0.5456, 0.5456, 0.5456, 184.107, 541.581)" fill="none" d="M 0 25 L 655.249 25" stroke="#111827" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#lmb2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#111827"/></g><g clip-path="url(#lmb3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#111827"/></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--lt-muted);text-transform:uppercase;letter-spacing:0.06em">Light BG</span>
+      </div>
+      <div class="logo-display logo-display--teal" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" style="height:80px;width:auto"><defs><clipPath id="lmt1"><path d="M 375 0 C 167.895 0 0 167.895 0 375 C 0 582.105 167.895 750 375 750 C 582.105 750 750 582.105 750 375 C 750 167.895 582.105 0 375 0 Z M 375 0" clip-rule="nonzero"/></clipPath><clipPath id="lmt2"><path d="M 375 125.512 C 352.281 125.512 333.867 143.93 333.867 166.648 C 333.867 189.367 352.281 207.781 375 207.781 C 397.719 207.781 416.133 189.367 416.133 166.648 C 416.133 143.93 397.719 125.512 375 125.512 Z" clip-rule="nonzero"/></clipPath><clipPath id="lmt3"><path d="M 375 542.141 C 352.281 542.141 333.867 560.559 333.867 583.277 C 333.867 605.992 352.281 624.41 375 624.41 C 397.719 624.41 416.133 605.992 416.133 583.277 C 416.133 560.559 397.719 542.141 375 542.141 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#lmt1)"><path transform="matrix(0.7715, 0, 0, 0.7715, 0, 0)" fill="none" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z" stroke="#FFFFFF" stroke-width="97.21" stroke-miterlimit="4"/></g><path transform="matrix(0.5456, 0.5456, -0.5456, 0.5456, 211.384, 184.108)" fill="none" d="M 0 25 L 649.814 25" stroke="#FFFFFF" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.5456, -0.5456, 0.5456, 0.5456, 184.107, 541.581)" fill="none" d="M 0 25 L 655.249 25" stroke="#FFFFFF" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#lmt2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#FFFFFF"/></g><g clip-path="url(#lmt3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#FFFFFF"/></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.06em">Accent BG</span>
+      </div>
+    </div>
+
+    <!-- LOGOTYPE -->
+    <div class="label" style="margin-top:40px;margin-bottom:12px">Logotype — Icon + "Exo" Wordmark (Primary Lockup)</div>
+    <div class="logo-grid">
+      <div class="logo-display logo-display--dark" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 960" style="height:64px;width:auto"><defs><clipPath id="lt1"><path d="M 479.941 -0.59 C 214.551 -0.59 -0.59 214.551 -0.59 479.941 C -0.59 745.328 214.551 960.469 479.941 960.469 C 745.328 960.469 960.469 745.328 960.469 479.941 C 960.469 214.551 745.328 -0.59 479.941 -0.59 Z" clip-rule="nonzero"/></clipPath><clipPath id="lt2"><path d="M 479.941 160.242 C 450.828 160.242 427.227 183.848 427.227 212.953 C 427.227 242.066 450.828 265.668 479.941 265.668 C 509.055 265.668 532.652 242.066 532.652 212.953 C 532.652 183.848 509.055 160.242 479.941 160.242 Z" clip-rule="nonzero"/></clipPath><clipPath id="lt3"><path d="M 479.941 694.121 C 450.828 694.121 427.227 717.719 427.227 746.832 C 427.227 775.941 450.828 799.539 479.941 799.539 C 509.055 799.539 532.652 775.941 532.652 746.832 C 532.652 717.719 509.055 694.121 479.941 694.121 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#lt1)"><path transform="matrix(0.9887, 0, 0, 0.9887, -0.59, -0.59)" fill="none" d="M 486.048 0.001 C 217.611 0.001 0.001 217.611 0.001 486.048 C 0.001 754.485 217.611 972.091 486.048 972.091 C 754.485 972.091 972.091 754.485 972.091 486.048 C 972.091 217.611 754.485 0.001 486.048 0.001 Z" stroke="#F9FAFB" stroke-width="116.674" stroke-miterlimit="4"/></g><path transform="matrix(0.699, 0.699, -0.699, 0.699, 270.281, 235.328)" fill="none" d="M 0 25 L 649.816 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.699, -0.699, 0.699, 0.699, 235.327, 693.4)" fill="none" d="M 0 25 L 655.249 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#lt2)"><rect x="427.227" y="160.242" width="105.426" height="105.426" fill="#F9FAFB"/></g><g clip-path="url(#lt3)"><rect x="427.227" y="694.121" width="105.426" height="105.418" fill="#F9FAFB"/></g><g fill="#F9FAFB"><g transform="translate(1017.501, 697.5)"><path d="M 37.922 0 L 37.922 -436.359 L 331.953 -436.359 L 331.953 -360.297 L 130.188 -360.297 L 130.188 -256.328 L 316.828 -256.328 L 316.828 -180.25 L 130.188 -180.25 L 130.188 -76.063 L 332.813 -76.063 L 332.813 0 Z"/></g></g><g fill="#F9FAFB"><g transform="translate(1385.043, 697.5)"><path d="M 112.078 -327.266 L 172.156 -212.859 L 233.734 -327.266 L 326.844 -327.266 L 232.031 -163.641 L 329.406 0 L 236.719 0 L 172.156 -113.14 L 108.672 0 L 14.922 0 L 112.078 -163.641 L 18.328 -327.266 Z"/></g></g><g fill="#F9FAFB"><g transform="translate(1717.216, 697.5)"><path d="M 184.094 6.391 C 151 6.391 122.41 -0.676 98.328 -14.813 C 74.254 -28.945 55.68 -48.691 42.609 -74.047 C 29.547 -99.398 23.016 -128.836 23.016 -162.359 C 23.016 -196.16 29.547 -225.738 42.609 -251.094 C 55.68 -276.457 74.254 -296.203 98.328 -310.328 C 122.41 -324.461 151 -331.531 184.094 -331.531 C 217.188 -331.531 245.77 -324.461 269.844 -310.328 C 293.926 -296.203 312.5 -276.457 325.563 -251.094 C 338.633 -225.738 345.172 -196.16 345.172 -162.359 C 345.172 -128.836 338.633 -99.398 325.563 -74.047 C 312.5 -48.691 293.926 -28.945 269.844 -14.813 C 245.77 -0.676 217.188 6.391 184.094 6.391 Z M 184.516 -63.922 C 206.961 -63.922 223.973 -73.297 235.547 -92.047 C 247.117 -110.797 252.906 -134.445 252.906 -163 C 252.906 -191.551 247.117 -215.234 235.547 -234.047 C 223.973 -252.867 206.961 -262.281 184.516 -262.281 C 161.648 -262.281 144.391 -252.867 132.734 -234.047 C 121.086 -215.234 115.266 -191.551 115.266 -163 C 115.266 -134.445 121.086 -110.797 132.734 -92.047 C 144.391 -73.297 161.648 -63.922 184.516 -63.922 Z"/></g></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Dark BG</span>
+      </div>
+      <div class="logo-display logo-display--light" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 960" style="height:64px;width:auto"><defs><clipPath id="ltb1"><path d="M 479.941 -0.59 C 214.551 -0.59 -0.59 214.551 -0.59 479.941 C -0.59 745.328 214.551 960.469 479.941 960.469 C 745.328 960.469 960.469 745.328 960.469 479.941 C 960.469 214.551 745.328 -0.59 479.941 -0.59 Z" clip-rule="nonzero"/></clipPath><clipPath id="ltb2"><path d="M 479.941 160.242 C 450.828 160.242 427.227 183.848 427.227 212.953 C 427.227 242.066 450.828 265.668 479.941 265.668 C 509.055 265.668 532.652 242.066 532.652 212.953 C 532.652 183.848 509.055 160.242 479.941 160.242 Z" clip-rule="nonzero"/></clipPath><clipPath id="ltb3"><path d="M 479.941 694.121 C 450.828 694.121 427.227 717.719 427.227 746.832 C 427.227 775.941 450.828 799.539 479.941 799.539 C 509.055 799.539 532.652 775.941 532.652 746.832 C 532.652 717.719 509.055 694.121 479.941 694.121 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#ltb1)"><path transform="matrix(0.9887, 0, 0, 0.9887, -0.59, -0.59)" fill="none" d="M 486.048 0.001 C 217.611 0.001 0.001 217.611 0.001 486.048 C 0.001 754.485 217.611 972.091 486.048 972.091 C 754.485 972.091 972.091 754.485 972.091 486.048 C 972.091 217.611 754.485 0.001 486.048 0.001 Z" stroke="#111827" stroke-width="116.674" stroke-miterlimit="4"/></g><path transform="matrix(0.699, 0.699, -0.699, 0.699, 270.281, 235.328)" fill="none" d="M 0 25 L 649.816 25" stroke="#111827" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.699, -0.699, 0.699, 0.699, 235.327, 693.4)" fill="none" d="M 0 25 L 655.249 25" stroke="#111827" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#ltb2)"><rect x="427.227" y="160.242" width="105.426" height="105.426" fill="#111827"/></g><g clip-path="url(#ltb3)"><rect x="427.227" y="694.121" width="105.426" height="105.418" fill="#111827"/></g><g fill="#111827"><g transform="translate(1017.501, 697.5)"><path d="M 37.922 0 L 37.922 -436.359 L 331.953 -436.359 L 331.953 -360.297 L 130.188 -360.297 L 130.188 -256.328 L 316.828 -256.328 L 316.828 -180.25 L 130.188 -180.25 L 130.188 -76.063 L 332.813 -76.063 L 332.813 0 Z"/></g></g><g fill="#111827"><g transform="translate(1385.043, 697.5)"><path d="M 112.078 -327.266 L 172.156 -212.859 L 233.734 -327.266 L 326.844 -327.266 L 232.031 -163.641 L 329.406 0 L 236.719 0 L 172.156 -113.14 L 108.672 0 L 14.922 0 L 112.078 -163.641 L 18.328 -327.266 Z"/></g></g><g fill="#111827"><g transform="translate(1717.216, 697.5)"><path d="M 184.094 6.391 C 151 6.391 122.41 -0.676 98.328 -14.813 C 74.254 -28.945 55.68 -48.691 42.609 -74.047 C 29.547 -99.398 23.016 -128.836 23.016 -162.359 C 23.016 -196.16 29.547 -225.738 42.609 -251.094 C 55.68 -276.457 74.254 -296.203 98.328 -310.328 C 122.41 -324.461 151 -331.531 184.094 -331.531 C 217.188 -331.531 245.77 -324.461 269.844 -310.328 C 293.926 -296.203 312.5 -276.457 325.563 -251.094 C 338.633 -225.738 345.172 -196.16 345.172 -162.359 C 345.172 -128.836 338.633 -99.398 325.563 -74.047 C 312.5 -48.691 293.926 -28.945 269.844 -14.813 C 245.77 -0.676 217.188 6.391 184.094 6.391 Z M 184.516 -63.922 C 206.961 -63.922 223.973 -73.297 235.547 -92.047 C 247.117 -110.797 252.906 -134.445 252.906 -163 C 252.906 -191.551 247.117 -215.234 235.547 -234.047 C 223.973 -252.867 206.961 -262.281 184.516 -262.281 C 161.648 -262.281 144.391 -252.867 132.734 -234.047 C 121.086 -215.234 115.266 -191.551 115.266 -163 C 115.266 -134.445 121.086 -110.797 132.734 -92.047 C 144.391 -73.297 161.648 -63.922 184.516 -63.922 Z"/></g></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--lt-muted);text-transform:uppercase;letter-spacing:0.06em">Light BG</span>
+      </div>
+      <div class="logo-display logo-display--teal" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 960" style="height:64px;width:auto"><defs><clipPath id="ltt1"><path d="M 479.941 -0.59 C 214.551 -0.59 -0.59 214.551 -0.59 479.941 C -0.59 745.328 214.551 960.469 479.941 960.469 C 745.328 960.469 960.469 745.328 960.469 479.941 C 960.469 214.551 745.328 -0.59 479.941 -0.59 Z" clip-rule="nonzero"/></clipPath><clipPath id="ltt2"><path d="M 479.941 160.242 C 450.828 160.242 427.227 183.848 427.227 212.953 C 427.227 242.066 450.828 265.668 479.941 265.668 C 509.055 265.668 532.652 242.066 532.652 212.953 C 532.652 183.848 509.055 160.242 479.941 160.242 Z" clip-rule="nonzero"/></clipPath><clipPath id="ltt3"><path d="M 479.941 694.121 C 450.828 694.121 427.227 717.719 427.227 746.832 C 427.227 775.941 450.828 799.539 479.941 799.539 C 509.055 799.539 532.652 775.941 532.652 746.832 C 532.652 717.719 509.055 694.121 479.941 694.121 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#ltt1)"><path transform="matrix(0.9887, 0, 0, 0.9887, -0.59, -0.59)" fill="none" d="M 486.048 0.001 C 217.611 0.001 0.001 217.611 0.001 486.048 C 0.001 754.485 217.611 972.091 486.048 972.091 C 754.485 972.091 972.091 754.485 972.091 486.048 C 972.091 217.611 754.485 0.001 486.048 0.001 Z" stroke="#FFFFFF" stroke-width="116.674" stroke-miterlimit="4"/></g><path transform="matrix(0.699, 0.699, -0.699, 0.699, 270.281, 235.328)" fill="none" d="M 0 25 L 649.816 25" stroke="#FFFFFF" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.699, -0.699, 0.699, 0.699, 235.327, 693.4)" fill="none" d="M 0 25 L 655.249 25" stroke="#FFFFFF" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#ltt2)"><rect x="427.227" y="160.242" width="105.426" height="105.426" fill="#FFFFFF"/></g><g clip-path="url(#ltt3)"><rect x="427.227" y="694.121" width="105.426" height="105.418" fill="#FFFFFF"/></g><g fill="#FFFFFF"><g transform="translate(1017.501, 697.5)"><path d="M 37.922 0 L 37.922 -436.359 L 331.953 -436.359 L 331.953 -360.297 L 130.188 -360.297 L 130.188 -256.328 L 316.828 -256.328 L 316.828 -180.25 L 130.188 -180.25 L 130.188 -76.063 L 332.813 -76.063 L 332.813 0 Z"/></g></g><g fill="#FFFFFF"><g transform="translate(1385.043, 697.5)"><path d="M 112.078 -327.266 L 172.156 -212.859 L 233.734 -327.266 L 326.844 -327.266 L 232.031 -163.641 L 329.406 0 L 236.719 0 L 172.156 -113.14 L 108.672 0 L 14.922 0 L 112.078 -163.641 L 18.328 -327.266 Z"/></g></g><g fill="#FFFFFF"><g transform="translate(1717.216, 697.5)"><path d="M 184.094 6.391 C 151 6.391 122.41 -0.676 98.328 -14.813 C 74.254 -28.945 55.68 -48.691 42.609 -74.047 C 29.547 -99.398 23.016 -128.836 23.016 -162.359 C 23.016 -196.16 29.547 -225.738 42.609 -251.094 C 55.68 -276.457 74.254 -296.203 98.328 -310.328 C 122.41 -324.461 151 -331.531 184.094 -331.531 C 217.188 -331.531 245.77 -324.461 269.844 -310.328 C 293.926 -296.203 312.5 -276.457 325.563 -251.094 C 338.633 -225.738 345.172 -196.16 345.172 -162.359 C 345.172 -128.836 338.633 -99.398 325.563 -74.047 C 312.5 -48.691 293.926 -28.945 269.844 -14.813 C 245.77 -0.676 217.188 6.391 184.094 6.391 Z M 184.516 -63.922 C 206.961 -63.922 223.973 -73.297 235.547 -92.047 C 247.117 -110.797 252.906 -134.445 252.906 -163 C 252.906 -191.551 247.117 -215.234 235.547 -234.047 C 223.973 -252.867 206.961 -262.281 184.516 -262.281 C 161.648 -262.281 144.391 -252.867 132.734 -234.047 C 121.086 -215.234 115.266 -191.551 115.266 -163 C 115.266 -134.445 121.086 -110.797 132.734 -92.047 C 144.391 -73.297 161.648 -63.922 184.516 -63.922 Z"/></g></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.06em">Accent BG</span>
+      </div>
+    </div>
+
+    <!-- WORDMARK -->
+    <div class="label" style="margin-top:40px;margin-bottom:12px">Wordmark — Text Only (When Mark Is Established)</div>
+    <div class="logo-grid">
+      <div class="logo-display logo-display--dark" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 960" style="height:48px;width:auto"><defs><clipPath id="wm1"><rect x="0" width="1426" y="0" height="959"/></clipPath></defs><g transform="matrix(1,0,0,1,367,0)"><g clip-path="url(#wm1)"><g fill="#F9FAFB"><g transform="translate(1.053, 770)"><path d="M 50.563 0 L 50.563 -581.813 L 442.609 -581.813 L 442.609 -480.391 L 173.578 -480.391 L 173.578 -341.766 L 422.438 -341.766 L 422.438 -240.344 L 173.578 -240.344 L 173.578 -101.422 L 443.75 -101.422 L 443.75 0 Z"/></g></g><g fill="#F9FAFB"><g transform="translate(491.109, 770)"><path d="M 149.438 -436.359 L 229.547 -283.813 L 311.641 -436.359 L 435.797 -436.359 L 309.375 -218.188 L 439.203 0 L 315.625 0 L 229.547 -150.859 L 144.891 0 L 19.891 0 L 149.438 -218.188 L 24.438 -436.359 Z"/></g></g><g fill="#F9FAFB"><g transform="translate(934.006, 770)"><path d="M 245.453 8.516 C 201.328 8.516 163.211 -0.906 131.109 -19.75 C 99.004 -38.594 74.238 -64.914 56.813 -98.719 C 39.395 -132.531 30.688 -171.785 30.688 -216.484 C 30.688 -261.555 39.395 -300.992 56.813 -334.797 C 74.238 -368.609 99.004 -394.938 131.109 -413.781 C 163.211 -432.625 201.328 -442.047 245.453 -442.047 C 289.578 -442.047 327.691 -432.625 359.797 -413.781 C 391.898 -394.938 416.664 -368.609 434.094 -334.797 C 451.52 -300.992 460.234 -261.555 460.234 -216.484 C 460.234 -171.785 451.52 -132.531 434.094 -98.719 C 416.664 -64.914 391.898 -38.594 359.797 -19.75 C 327.691 -0.906 289.578 8.516 245.453 8.516 Z M 246.016 -85.234 C 275.941 -85.234 298.625 -97.734 314.063 -122.734 C 329.5 -147.734 337.219 -179.266 337.219 -217.328 C 337.219 -255.398 329.5 -286.984 314.063 -312.078 C 298.625 -337.172 275.941 -349.719 246.016 -349.719 C 215.523 -349.719 192.516 -337.172 176.984 -312.078 C 161.453 -286.984 153.688 -255.398 153.688 -217.328 C 153.688 -179.266 161.453 -147.734 176.984 -122.734 C 192.516 -97.734 215.523 -85.234 246.016 -85.234 Z"/></g></g></g></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em">Dark BG</span>
+      </div>
+      <div class="logo-display logo-display--light" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 960" style="height:48px;width:auto"><g transform="matrix(1,0,0,1,367,0)"><g fill="#111827"><g transform="translate(1.053, 770)"><path d="M 50.563 0 L 50.563 -581.813 L 442.609 -581.813 L 442.609 -480.391 L 173.578 -480.391 L 173.578 -341.766 L 422.438 -341.766 L 422.438 -240.344 L 173.578 -240.344 L 173.578 -101.422 L 443.75 -101.422 L 443.75 0 Z"/></g></g><g fill="#111827"><g transform="translate(491.109, 770)"><path d="M 149.438 -436.359 L 229.547 -283.813 L 311.641 -436.359 L 435.797 -436.359 L 309.375 -218.188 L 439.203 0 L 315.625 0 L 229.547 -150.859 L 144.891 0 L 19.891 0 L 149.438 -218.188 L 24.438 -436.359 Z"/></g></g><g fill="#111827"><g transform="translate(934.006, 770)"><path d="M 245.453 8.516 C 201.328 8.516 163.211 -0.906 131.109 -19.75 C 99.004 -38.594 74.238 -64.914 56.813 -98.719 C 39.395 -132.531 30.688 -171.785 30.688 -216.484 C 30.688 -261.555 39.395 -300.992 56.813 -334.797 C 74.238 -368.609 99.004 -394.938 131.109 -413.781 C 163.211 -432.625 201.328 -442.047 245.453 -442.047 C 289.578 -442.047 327.691 -432.625 359.797 -413.781 C 391.898 -394.938 416.664 -368.609 434.094 -334.797 C 451.52 -300.992 460.234 -261.555 460.234 -216.484 C 460.234 -171.785 451.52 -132.531 434.094 -98.719 C 416.664 -64.914 391.898 -38.594 359.797 -19.75 C 327.691 -0.906 289.578 8.516 245.453 8.516 Z M 246.016 -85.234 C 275.941 -85.234 298.625 -97.734 314.063 -122.734 C 329.5 -147.734 337.219 -179.266 337.219 -217.328 C 337.219 -255.398 329.5 -286.984 314.063 -312.078 C 298.625 -337.172 275.941 -349.719 246.016 -349.719 C 215.523 -349.719 192.516 -337.172 176.984 -312.078 C 161.453 -286.984 153.688 -255.398 153.688 -217.328 C 153.688 -179.266 161.453 -147.734 176.984 -122.734 C 192.516 -97.734 215.523 -85.234 246.016 -85.234 Z"/></g></g></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:var(--lt-muted);text-transform:uppercase;letter-spacing:0.06em">Light BG</span>
+      </div>
+      <div class="logo-display logo-display--teal" style="position:relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2160 960" style="height:48px;width:auto"><g transform="matrix(1,0,0,1,367,0)"><g fill="#FFFFFF"><g transform="translate(1.053, 770)"><path d="M 50.563 0 L 50.563 -581.813 L 442.609 -581.813 L 442.609 -480.391 L 173.578 -480.391 L 173.578 -341.766 L 422.438 -341.766 L 422.438 -240.344 L 173.578 -240.344 L 173.578 -101.422 L 443.75 -101.422 L 443.75 0 Z"/></g></g><g fill="#FFFFFF"><g transform="translate(491.109, 770)"><path d="M 149.438 -436.359 L 229.547 -283.813 L 311.641 -436.359 L 435.797 -436.359 L 309.375 -218.188 L 439.203 0 L 315.625 0 L 229.547 -150.859 L 144.891 0 L 19.891 0 L 149.438 -218.188 L 24.438 -436.359 Z"/></g></g><g fill="#FFFFFF"><g transform="translate(934.006, 770)"><path d="M 245.453 8.516 C 201.328 8.516 163.211 -0.906 131.109 -19.75 C 99.004 -38.594 74.238 -64.914 56.813 -98.719 C 39.395 -132.531 30.688 -171.785 30.688 -216.484 C 30.688 -261.555 39.395 -300.992 56.813 -334.797 C 74.238 -368.609 99.004 -394.938 131.109 -413.781 C 163.211 -432.625 201.328 -442.047 245.453 -442.047 C 289.578 -442.047 327.691 -432.625 359.797 -413.781 C 391.898 -394.938 416.664 -368.609 434.094 -334.797 C 451.52 -300.992 460.234 -261.555 460.234 -216.484 C 460.234 -171.785 451.52 -132.531 434.094 -98.719 C 416.664 -64.914 391.898 -38.594 359.797 -19.75 C 327.691 -0.906 289.578 8.516 245.453 8.516 Z M 246.016 -85.234 C 275.941 -85.234 298.625 -97.734 314.063 -122.734 C 329.5 -147.734 337.219 -179.266 337.219 -217.328 C 337.219 -255.398 329.5 -286.984 314.063 -312.078 C 298.625 -337.172 275.941 -349.719 246.016 -349.719 C 215.523 -349.719 192.516 -337.172 176.984 -312.078 C 161.453 -286.984 153.688 -255.398 153.688 -217.328 C 153.688 -179.266 161.453 -147.734 176.984 -122.734 C 192.516 -97.734 215.523 -85.234 246.016 -85.234 Z"/></g></g></g></svg>
+        <span style="position:absolute;bottom:8px;right:12px;font-size:10px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.06em">Accent BG</span>
+      </div>
+    </div>
+
+    <!-- Favicon + Clear Space -->
+    <div class="grid-2" style="margin-top:40px">
+      <div class="card">
+        <div class="label">Favicon Recommendation</div>
+        <p style="font-size:15px;margin-bottom:16px">Use the <strong>Logomark</strong> (X-in-circle) at 32x32 / 16x16. Already distinctive at small sizes.</p>
+        <div style="display:flex;align-items:center;gap:24px;margin-top:16px">
+          <div style="display:flex;align-items:center;gap:12px;background:var(--surface);padding:12px 20px;border:1px solid var(--border)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" style="width:16px;height:16px"><defs><clipPath id="fav1"><path d="M 375 0 C 167.895 0 0 167.895 0 375 C 0 582.105 167.895 750 375 750 C 582.105 750 750 582.105 750 375 C 750 167.895 582.105 0 375 0 Z" clip-rule="nonzero"/></clipPath><clipPath id="fav2"><path d="M 375 125.512 C 352.281 125.512 333.867 143.93 333.867 166.648 C 333.867 189.367 352.281 207.781 375 207.781 C 397.719 207.781 416.133 189.367 416.133 166.648 C 416.133 143.93 397.719 125.512 375 125.512 Z" clip-rule="nonzero"/></clipPath><clipPath id="fav3"><path d="M 375 542.141 C 352.281 542.141 333.867 560.559 333.867 583.277 C 333.867 605.992 352.281 624.41 375 624.41 C 397.719 624.41 416.133 605.992 416.133 583.277 C 416.133 560.559 397.719 542.141 375 542.141 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#fav1)"><path transform="matrix(0.7715, 0, 0, 0.7715, 0, 0)" fill="none" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z" stroke="#F9FAFB" stroke-width="97.21" stroke-miterlimit="4"/></g><path transform="matrix(0.5456, 0.5456, -0.5456, 0.5456, 211.384, 184.108)" fill="none" d="M 0 25 L 649.814 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.5456, -0.5456, 0.5456, 0.5456, 184.107, 541.581)" fill="none" d="M 0 25 L 655.249 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#fav2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#F9FAFB"/></g><g clip-path="url(#fav3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#F9FAFB"/></g></svg>
+            <span style="font-size:13px;color:var(--muted)">exotechnologies.xyz</span>
+          </div>
+          <span style="font-size:12px;color:var(--muted)">16px mock</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Clear Space</div>
+        <p style="font-size:15px;margin-bottom:16px">Minimum padding around any logo lockup = width of the "o" in Exo on all four sides.</p>
+        <div style="display:flex;align-items:center;justify-content:center;padding:32px;background:var(--bg);border:1px solid var(--border)">
+          <div style="border:1px dashed var(--accent);padding:24px;display:inline-block;position:relative">
+            <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:32px;letter-spacing:0.02em">Exo</span>
+            <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em">Clear Zone</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. TYPOGRAPHY ========== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num">05 / Typography</span>
+    <h2 class="section-title">Outfit + Inter</h2>
+    <p class="section-subtitle">Outfit Variable for display headings. Inter Variable for body, UI, and captions. Both loaded from Google Fonts.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="label">Display — Outfit Bold</div>
+        <div class="type-specimen" style="margin-top:16px">
+          <h1 style="font-family:'Outfit',sans-serif;font-size:48px;font-weight:700;line-height:1.1">Building Outside the Box</h1>
+          <div class="type-meta" style="margin-top:8px">Outfit Bold / 48px / -0.02em tracking / 1.1 line-height</div>
+        </div>
+        <div class="type-specimen">
+          <h2 style="font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;line-height:1.2">High-Performance Systems</h2>
+          <div class="type-meta" style="margin-top:8px">Outfit Bold / 32px / -0.02em tracking / 1.2 line-height</div>
+        </div>
+        <div class="type-specimen">
+          <h3 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:600;line-height:1.3">Engineering Excellence</h3>
+          <div class="type-meta" style="margin-top:8px">Outfit SemiBold / 24px / -0.01em tracking / 1.3 line-height</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Body — Inter</div>
+        <div class="type-specimen" style="margin-top:16px">
+          <p style="font-family:'Inter',sans-serif;font-size:16px;font-weight:400;line-height:1.6;margin-bottom:8px">We build high-performance systems across AI, blockchain, and product engineering. Our team brings deep protocol-level expertise to every engagement.</p>
+          <div class="type-meta">Inter Regular / 16px / 1.6 line-height</div>
+        </div>
+        <div class="type-specimen">
+          <p style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:1.5;margin-bottom:8px">26 protocols shipped. $1B+ TVL. Building since 2016.</p>
+          <div class="type-meta">Inter Medium / 14px / 1.5 line-height</div>
+        </div>
+        <div class="type-specimen">
+          <p style="font-family:'Inter',sans-serif;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px">AI &middot; BLOCKCHAIN &middot; PRODUCT ENGINEERING</p>
+          <div class="type-meta">Inter Medium / 12px / uppercase / 0.08em tracking</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:32px">
+      <div class="label">Type Scale</div>
+      <table style="margin-top:12px">
+        <tr><th>Level</th><th>Font</th><th>Weight</th><th>Size</th><th>Tracking</th><th>Case</th></tr>
+        <tr><td>H1</td><td>Outfit</td><td>700 (Bold)</td><td>48px</td><td>-0.02em</td><td>Sentence</td></tr>
+        <tr><td>H2</td><td>Outfit</td><td>700 (Bold)</td><td>32px</td><td>-0.02em</td><td>Sentence</td></tr>
+        <tr><td>H3</td><td>Outfit</td><td>600 (Semi)</td><td>24px</td><td>-0.01em</td><td>Sentence</td></tr>
+        <tr><td>Body</td><td>Inter</td><td>400 (Regular)</td><td>16px</td><td>0</td><td>Sentence</td></tr>
+        <tr><td>Body Small</td><td>Inter</td><td>500 (Medium)</td><td>14px</td><td>0</td><td>Sentence</td></tr>
+        <tr><td>Caption</td><td>Inter</td><td>500 (Medium)</td><td>12px</td><td>0.08em</td><td>UPPERCASE</td></tr>
+        <tr><td>Label</td><td>Inter</td><td>600 (Semi)</td><td>11px</td><td>0.1em</td><td>UPPERCASE</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. SOCIAL MEDIA TEMPLATES ========== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num">06 / Social Media</span>
+    <h2 class="section-title">Synced Presence</h2>
+    <p class="section-subtitle">Same dark aesthetic, same aurora glow, same logomark across all platforms. Twitter is the reference standard — LinkedIn catches up.</p>
+
+    <!-- Twitter -->
+    <div class="label" style="margin-bottom:12px">Twitter (X) — Reference Standard</div>
+    <div style="margin-bottom:32px">
+      <div class="social-mock--twitter-banner" style="position:relative;margin-bottom:16px">
+        <span class="social-dim">1500 &times; 500</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <div class="social-mock--avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" style="width:48px;height:48px"><defs><clipPath id="sa1"><path d="M 375 0 C 167.895 0 0 167.895 0 375 C 0 582.105 167.895 750 375 750 C 582.105 750 750 582.105 750 375 C 750 167.895 582.105 0 375 0 Z" clip-rule="nonzero"/></clipPath><clipPath id="sa2"><path d="M 375 125.512 C 352.281 125.512 333.867 143.93 333.867 166.648 C 333.867 189.367 352.281 207.781 375 207.781 C 397.719 207.781 416.133 189.367 416.133 166.648 C 416.133 143.93 397.719 125.512 375 125.512 Z" clip-rule="nonzero"/></clipPath><clipPath id="sa3"><path d="M 375 542.141 C 352.281 542.141 333.867 560.559 333.867 583.277 C 333.867 605.992 352.281 624.41 375 624.41 C 397.719 624.41 416.133 605.992 416.133 583.277 C 416.133 560.559 397.719 542.141 375 542.141 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#sa1)"><path transform="matrix(0.7715, 0, 0, 0.7715, 0, 0)" fill="none" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z" stroke="#F9FAFB" stroke-width="97.21" stroke-miterlimit="4"/></g><path transform="matrix(0.5456, 0.5456, -0.5456, 0.5456, 211.384, 184.108)" fill="none" d="M 0 25 L 649.814 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.5456, -0.5456, 0.5456, 0.5456, 184.107, 541.581)" fill="none" d="M 0 25 L 655.249 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#sa2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#F9FAFB"/></g><g clip-path="url(#sa3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#F9FAFB"/></g></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:15px">Exo</div>
+          <div style="font-size:13px;color:var(--muted)">@exo_tech_ &middot; 33.7K followers</div>
+        </div>
+        <span class="tag" style="margin-left:auto">LIVE</span>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="label" style="margin-bottom:12px">LinkedIn — Needs Sync</div>
+    <div style="margin-bottom:32px">
+      <div class="social-mock--linkedin-banner" style="position:relative;margin-bottom:16px">
+        <span class="social-dim">1584 &times; 396</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <div class="social-mock--avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 750" style="width:48px;height:48px"><defs><clipPath id="la1"><path d="M 375 0 C 167.895 0 0 167.895 0 375 C 0 582.105 167.895 750 375 750 C 582.105 750 750 582.105 750 375 C 750 167.895 582.105 0 375 0 Z" clip-rule="nonzero"/></clipPath><clipPath id="la2"><path d="M 375 125.512 C 352.281 125.512 333.867 143.93 333.867 166.648 C 333.867 189.367 352.281 207.781 375 207.781 C 397.719 207.781 416.133 189.367 416.133 166.648 C 416.133 143.93 397.719 125.512 375 125.512 Z" clip-rule="nonzero"/></clipPath><clipPath id="la3"><path d="M 375 542.141 C 352.281 542.141 333.867 560.559 333.867 583.277 C 333.867 605.992 352.281 624.41 375 624.41 C 397.719 624.41 416.133 605.992 416.133 583.277 C 416.133 560.559 397.719 542.141 375 542.141 Z" clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#la1)"><path transform="matrix(0.7715, 0, 0, 0.7715, 0, 0)" fill="none" d="M 486.048 0 C 217.613 0 0 217.613 0 486.048 C 0 754.483 217.613 972.096 486.048 972.096 C 754.483 972.096 972.096 754.483 972.096 486.048 C 972.096 217.613 754.483 0 486.048 0 Z" stroke="#F9FAFB" stroke-width="97.21" stroke-miterlimit="4"/></g><path transform="matrix(0.5456, 0.5456, -0.5456, 0.5456, 211.384, 184.108)" fill="none" d="M 0 25 L 649.814 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><path transform="matrix(0.5456, -0.5456, 0.5456, 0.5456, 184.107, 541.581)" fill="none" d="M 0 25 L 655.249 25" stroke="#F9FAFB" stroke-width="50" stroke-miterlimit="4"/><g clip-path="url(#la2)"><rect x="333.867" y="125.512" width="82.266" height="82.27" fill="#F9FAFB"/></g><g clip-path="url(#la3)"><rect x="333.867" y="542.141" width="82.266" height="82.27" fill="#F9FAFB"/></g></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:15px">Exo</div>
+          <div style="font-size:13px;color:var(--muted)">exotechnologies.xyz</div>
+        </div>
+        <span class="tag" style="margin-left:auto;border-color:#F59E0B;color:#F59E0B">NEEDS UPDATE</span>
+      </div>
+    </div>
+
+    <!-- Action items -->
+    <div class="card">
+      <div class="label">LinkedIn Action Items</div>
+      <ul class="bullet-list" style="margin-top:12px">
+        <li>Update company name from "Exo Technologies" &rarr; <strong>"Exo"</strong></li>
+        <li>Replace grunge "development services" banner with dark + aurora glow banner</li>
+        <li>Replace profile photo with logomark on dark bg (matching Twitter)</li>
+        <li>Update tagline to match new positioning</li>
+      </ul>
+    </div>
+
+    <!-- Cross-platform rules -->
+    <div class="card" style="margin-top:24px">
+      <div class="label">Cross-Platform Rules</div>
+      <table style="margin-top:12px">
+        <tr><th>Element</th><th>Rule</th></tr>
+        <tr><td>Background color</td><td><code>#0B1120</code> across all platforms</td></tr>
+        <tr><td>Aurora glow</td><td>Same radial-gradient treatment, bottom-center origin</td></tr>
+        <tr><td>Profile picture</td><td>Logomark on dark bg — identical everywhere</td></tr>
+        <tr><td>Banners</td><td>Synced aesthetic, platform-specific aspect ratios (1500&times;500 vs 1584&times;396)</td></tr>
+        <tr><td>Display name</td><td>"Exo" — not "Exo Technologies" or "Exo Tech"</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. POSITIONING & VOICE ========== -->
+<section class="section">
+  <div class="container">
+    <span class="section-num">07 / Positioning &amp; Voice</span>
+    <h2 class="section-title">Beyond Crypto</h2>
+    <p class="section-subtitle">Exo is not a crypto dev shop. It's an elite engineering firm that builds across verticals — and blockchain happens to be one of them.</p>
+
+    <div class="grid-2">
+      <div class="card" style="border-left:3px solid #EF4444">
+        <div class="label" style="color:#EF4444">Current (Outdated)</div>
+        <div class="quote" style="border-color:#EF4444;margin-top:16px">"We're a team of former founders with deep technical experience in FinTech, Crypto..."</div>
+        <div class="quote" style="border-color:#EF4444">"Specializing in building world-class crypto software"</div>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+          <span class="tag" style="border-color:#EF4444;color:#EF4444">Dev Shop</span>
+          <span class="tag" style="border-color:#EF4444;color:#EF4444">Validator</span>
+          <span class="tag" style="border-color:#EF4444;color:#EF4444">Podcast</span>
+          <span class="tag" style="border-color:#EF4444;color:#EF4444">Research</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <div class="label" style="color:var(--accent)">Recommended Direction</div>
+        <div class="quote" style="margin-top:16px">"We build high-performance systems across AI, blockchain, and product engineering."</div>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px">
+          <span class="tag">Web3</span>
+          <span class="tag">AI / ML</span>
+          <span class="tag">Government</span>
+          <span class="tag">Enterprise SaaS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:24px">
+      <div class="card">
+        <div class="label">Proof Points</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:700;color:var(--accent)">26</div>
+            <div style="font-size:13px;color:var(--muted)">Protocols shipped</div>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:700;color:var(--accent)">$1B+</div>
+            <div style="font-size:13px;color:var(--muted)">Total value locked</div>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:700;color:var(--accent)">2016</div>
+            <div style="font-size:13px;color:var(--muted)">Building since</div>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-size:36px;font-weight:700;color:var(--accent)">9</div>
+            <div style="font-size:13px;color:var(--muted)">Engineers</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="label">Voice Attributes</div>
+        <ul class="bullet-list" style="margin-top:16px">
+          <li><strong>Technically credible</strong> — speak with precision, not buzzwords</li>
+          <li><strong>Principled</strong> — values-driven, not trend-chasing</li>
+          <li><strong>Confident, not arrogant</strong> — let the work speak</li>
+          <li><strong>Concise</strong> — say more with less</li>
+        </ul>
+        <div style="margin-top:20px;padding:12px 16px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2)">
+          <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#F59E0B;margin-bottom:4px">Flag for Copy Ariel</div>
+          <div style="font-size:13px;color:var(--muted)">Full copy audit needed: bio text, website headlines, LinkedIn overview, service descriptions, case study framing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. WEBSITE LIGHT MODE CONCEPT ========== -->
+<section class="section" style="border-bottom:none">
+  <div class="container">
+    <span class="section-num">08 / Website Light Mode</span>
+    <h2 class="section-title">Dark &harr; Light Toggle</h2>
+    <p class="section-subtitle">The current site is dark-only. Adding a light mode toggle creates a more accessible experience while keeping the aurora signature.</p>
+
+    <div class="website-compare">
+      <!-- Dark -->
+      <div class="website-mock mock-dark">
+        <div class="mock-nav">
+          <span class="nav-logo" style="color:var(--text)">Exo</span>
+          <div class="nav-links">
+            <span>Services</span><span>Work</span><span>About</span><span>Contact</span>
+          </div>
+          <div class="mock-toggle" style="background:var(--accent)">
+            <div style="position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff"></div>
+          </div>
+        </div>
+        <div class="mock-hero">
+          <h2>Building Outside<br>the Box</h2>
+          <p style="color:var(--muted)">High-performance systems across AI, blockchain, and product engineering.</p>
+          <span class="mock-btn">GET IN TOUCH</span>
+        </div>
+      </div>
+      <!-- Light -->
+      <div class="website-mock mock-light">
+        <div class="mock-nav">
+          <span class="nav-logo" style="color:var(--lt-text)">Exo</span>
+          <div class="nav-links">
+            <span>Services</span><span>Work</span><span>About</span><span>Contact</span>
+          </div>
+          <div class="mock-toggle" style="background:var(--lt-accent);position:relative">
+            <div style="position:absolute;top:2px;right:2px;width:16px;height:16px;border-radius:50%;background:#fff"></div>
+          </div>
+        </div>
+        <div class="mock-hero">
+          <h2>Building Outside<br>the Box</h2>
+          <p>High-performance systems across AI, blockchain, and product engineering.</p>
+          <span class="mock-btn">GET IN TOUCH</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:48px;margin-top:16px">
+      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted)">Current (Dark)</span>
+      <span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted)">Proposed (Light)</span>
+    </div>
+
+    <div class="grid-2" style="margin-top:32px">
+      <div class="card">
+        <div class="label">Implementation Notes</div>
+        <ul class="bullet-list" style="margin-top:12px">
+          <li>Toggle in nav bar — persists via localStorage</li>
+          <li>CSS custom properties switch all tokens at once</li>
+          <li>Aurora glow inverts: teal-on-dark &rarr; warm-teal-on-white</li>
+          <li>Accent teal darkens for WCAG contrast on white backgrounds</li>
+          <li>ai-audits subdomain follows the same system</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label">Token Mapping</div>
+        <table style="margin-top:12px">
+          <tr><th>Token</th><th>Dark</th><th>Light</th></tr>
+          <tr><td>Background</td><td><code>#0B1120</code></td><td><code>#FAFBFC</code></td></tr>
+          <tr><td>Surface</td><td><code>#111827</code></td><td><code>#FFFFFF</code></td></tr>
+          <tr><td>Accent</td><td><code>#0D9488</code></td><td><code>#0D9488</code></td></tr>
+          <tr><td>Text</td><td><code>#F9FAFB</code></td><td><code>#111827</code></td></tr>
+          <tr><td>Muted</td><td><code>#6B7280</code></td><td><code>#6B7280</code></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="padding:48px 0;text-align:center;border-top:1px solid var(--border)">
+  <div class="container">
+    <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted)">Exo &mdash; Brand Direction Guide &mdash; February 2026</p>
+    <p style="font-size:11px;color:var(--muted);margin-top:4px">Prepared by Dirt Digital &middot; Confidential</p>
+  </div>
+</footer>
+
+</body>
+</html>
